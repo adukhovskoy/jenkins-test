@@ -1,5 +1,10 @@
 pipeline {
   agent { label '!master' }
+  parameters {
+    string(name: 'BRANCH',
+      defaultValue: 'master',
+      description: '(Optional) Resources to target. If multiple, separate with comma.')
+  }
   stages {
     stage('Checkout repo'){
       steps {
