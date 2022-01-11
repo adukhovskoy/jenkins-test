@@ -1,4 +1,5 @@
 pipeline {
+  agent { label '!master' }
   parameters {
     string(name: 'BRANCH',
       defaultValue: 'master',
